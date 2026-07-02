@@ -74,8 +74,8 @@ function drawBall() {
 function gameLoop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    drawPitch();
-    drawBall();
+drawPitch();
+// drawBall();
 
     requestAnimationFrame(gameLoop);
 }
