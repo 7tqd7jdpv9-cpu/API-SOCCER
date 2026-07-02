@@ -1,38 +1,39 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:#0b0b0b;
-    color:white;
-    overflow:hidden;
+body {
+    overflow: hidden;
+    background: #000;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#menu{
-    width:100vw;
-    height:100vh;
+/* ---------- タイトル画面 ---------- */
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+#menu {
+    position: fixed;
+    inset: 0;
 
-    background:linear-gradient(#000,#151515);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(180deg,#000,#111,#1b1b1b);
 }
 
-h1{
-    color:#d4af37;
-    font-size:52px;
-    letter-spacing:4px;
-    margin-bottom:10px;
+h1 {
+    color: #D4AF37;
+    font-size: 52px;
+    letter-spacing: 5px;
+    text-shadow: 0 0 15px rgba(212,175,55,.35);
 }
 
 .version{
     color:#888;
-    margin-bottom:60px;
+    margin:20px 0 60px;
 }
 
 #playBtn{
@@ -43,16 +44,14 @@ h1{
     border:none;
     border-radius:15px;
 
-    background:#d4af37;
+    background:#D4AF37;
 
     color:#111;
 
     font-size:28px;
     font-weight:bold;
 
-    cursor:pointer;
-
-    transition:.25s;
+    transition:.2s;
 }
 
 #playBtn:active{
@@ -61,40 +60,21 @@ h1{
 
 }
 
+/* ---------- ゲーム ---------- */
+
 #game{
 
     display:none;
 
-    width:100vw;
-    height:100vh;
-
-    background:#146b3a;
-
-    position:relative;
+    position:fixed;
+    inset:0;
 
 }
 
-#ball{
-
-    width:70px;
-    height:70px;
-
-    border-radius:50%;
-
-    background:white;
-
-    position:absolute;
-
-    bottom:80px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-}
 canvas{
 
-width:100vw;
-height:100vh;
-display:block;
+    width:100%;
+    height:100%;
+    display:block;
 
 }
