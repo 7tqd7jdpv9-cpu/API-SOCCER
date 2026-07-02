@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>API SOCCER</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>API SOCCER</title>
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 
-<body style="background:#111;color:#D4AF37;font-family:Arial;text-align:center;margin-top:120px;">
+<body>
 
-<h1>⚽ API SOCCER ⚽</h1>
+<div id="menu">
 
-<p>Version 0.1.0</p>
+<h1>API SOCCER</h1>
 
-<button style="
-padding:18px 45px;
-font-size:24px;
-background:#D4AF37;
-color:black;
-border:none;
-border-radius:12px;
-font-weight:bold;">
+<p class="version">Version 0.1.1</p>
+
+<button id="playBtn">
+
 PLAY
+
 </button>
+
+</div>
+
+<div id="game">
+
+<div id="ball"></div>
+
+</div>
+
+<script src="js/game.js"></script>
 
 </body>
 </html>
