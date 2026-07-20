@@ -56,5 +56,5 @@ canvas.addEventListener("touchmove", (e) => {
 
     draw();
 }, { passive: false });
-});
+
 };
