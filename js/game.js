@@ -46,9 +46,15 @@ function draw() {
 draw();
 
 canvas.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+
+    const rect = canvas.getBoundingClientRect();
     const touch = e.touches[0];
-    ball.x = touch.clientX;
-    ball.y = touch.clientY;
+
+    ball.x = touch.clientX - rect.left;
+    ball.y = touch.clientY - rect.top;
+
     draw();
+}, { passive: false });
 });
 };
