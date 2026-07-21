@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>API SOCCER</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API SOCCER</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div id="menu">
-  <h1>API SOCCER</h1>
-  <p class="version">v0.3.0</p>
-  <button id="playBtn">PLAY</button>
-</div>
+    <!-- タイトル画面 -->
+    <div id="menu">
 
-<div id="game">
-  <canvas id="gameCanvas"></canvas>
-</div>
+        <h1>API SOCCER</h1>
 
-<script src="js/game.js"></script>
+        <p class="version">
+            Version 0.4.0
+        </p>
+
+        <button id="playBtn">
+            PLAY
+        </button>
+
+    </div>
+
+    <!-- ゲーム画面 -->
+    <div id="game">
+
+        <!-- スコア -->
+        <div id="score">
+            SCORE : 0
+        </div>
+
+        <!-- GOAL演出 -->
+        <div id="goalText">
+            GOAL!!
+        </div>
+
+        <!-- キャンバス -->
+        <canvas id="gameCanvas"></canvas>
+
+    </div>
+
+    <script src="js/game.js"></script>
 
 </body>
 </html>
