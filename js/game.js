@@ -216,16 +216,18 @@ function draw(){
     ctx.font="30px Arial";
     ctx.fillText("Score : "+score,20,40);
 
-    // タッチ位置を表示（最後に描く）
-    if(touchX !== null){
+    // タッチ位置を表示
+if(touchX !== null){
 
-        ctx.beginPath();
-        ctx.strokeStyle="yellow";
-        ctx.lineWidth=3;
-        ctx.arc(touchX,touchY,30,0,Math.PI*2);
-        ctx.stroke();
-        
-        // 仮想スティック
+    ctx.beginPath();
+    ctx.strokeStyle = "yellow";
+    ctx.lineWidth = 3;
+    ctx.arc(touchX, touchY, 30, 0, Math.PI * 2);
+    ctx.stroke();
+
+}
+
+// ===== 仮想スティック（←ifの外！）=====
 ctx.beginPath();
 ctx.strokeStyle = "white";
 ctx.lineWidth = 4;
