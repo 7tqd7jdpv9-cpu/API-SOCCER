@@ -37,6 +37,16 @@ const goal = {
     height: 20
 };
 
+const joystick = {
+    baseX: 100,
+    baseY: canvas.height - 100,
+    radius: 50,
+    knobX: 100,
+    knobY: canvas.height - 100,
+    knobRadius: 20,
+    active: false
+};
+
 let score = 0;
 
 const keys = {};
@@ -214,6 +224,30 @@ function draw(){
         ctx.lineWidth=3;
         ctx.arc(touchX,touchY,30,0,Math.PI*2);
         ctx.stroke();
+        
+        // 仮想スティック
+ctx.beginPath();
+ctx.strokeStyle = "white";
+ctx.lineWidth = 4;
+ctx.arc(
+    joystick.baseX,
+    joystick.baseY,
+    joystick.radius,
+    0,
+    Math.PI * 2
+);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.fillStyle = "rgba(255,255,255,0.6)";
+ctx.arc(
+    joystick.knobX,
+    joystick.knobY,
+    joystick.knobRadius,
+    0,
+    Math.PI * 2
+);
+ctx.fill();
 
     }
 
