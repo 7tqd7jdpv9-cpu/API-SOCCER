@@ -40,6 +40,28 @@ const goal = {
 let score = 0;
 
 const keys = {};
+// タッチ位置
+let touchX = null;
+let touchY = null;
+
+canvas.addEventListener("touchstart", handleTouch);
+canvas.addEventListener("touchmove", handleTouch);
+
+canvas.addEventListener("touchend", () => {
+    touchX = null;
+    touchY = null;
+});
+
+function handleTouch(e){
+
+    e.preventDefault();
+
+    const rect = canvas.getBoundingClientRect();
+
+    touchX = e.touches[0].clientX - rect.left;
+    touchY = e.touches[0].clientY - rect.top;
+
+}
 
 document.addEventListener("keydown", e => {
     keys[e.key] = true;
@@ -53,6 +75,22 @@ document.addEventListener("keyup", e => {
 // 更新
 //====================
 function update(){
+    // スマホ移動
+if(touchX !== null){
+
+    const dx = touchX - player.x;
+    const dy = touchY - player.y;
+
+    const distance = Math.sqrt(dx*dx + dy*dy);
+
+    if(distance > 5){
+
+        player.x += dx / distance * player.speed;
+        player.y += dy / distance * player.speed;
+
+    }
+
+}
 
     // プレイヤー移動
     if(keys["ArrowLeft"] || keys["a"]) player.x -= player.speed;
@@ -167,6 +205,17 @@ function draw(){
     ctx.fillStyle="white";
     ctx.font="30px Arial";
     ctx.fillText("Score : "+score,20,40);
+
+    // タッチ位置を表示（最後に描く）
+    if(touchX !== null){
+
+        ctx.beginPath();
+        ctx.strokeStyle="yellow";
+        ctx.lineWidth=3;
+        ctx.arc(touchX,touchY,30,0,Math.PI*2);
+        ctx.stroke();
+
+    }
 
 }
 
